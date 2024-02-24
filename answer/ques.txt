@@ -1,0 +1,6 @@
+ex3_6
+output -> tuple
+rtype: list
+
+solve(0)
+__
