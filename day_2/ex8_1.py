@@ -21,7 +21,7 @@ from typing import List, Tuple
 # logger = log.get_logger(__name__)
 
 
-def your_function(N: int) -> Tuple[List[str], float]:
+def calculateRuntime(N: int) -> Tuple[List[str], float]:
     """Trả về tuple chứa 2 phần tử bao gồm:
     - List chứa các điểm thời gian (string) sau N lần thực hiện
     theo yêu cầu từ ``__doc__``
@@ -29,9 +29,17 @@ def your_function(N: int) -> Tuple[List[str], float]:
 
     :rtype tuple:
     """
-    result = None
+    startFunctionTime = datetime.datetime.now()
+    timeStamps = []
+    totalRunTime = 0
 
-    return result
+    for i in range(N):
+        start = datetime.datetime.now()
+        print(start.strftime("%H:%M:%S"))
+        time.sleep(1)
+        timeStamps.append(str(start))
+
+    return (timeStamps, (datetime.datetime.now() - startFunctionTime).total_seconds())
 
 
 def solve(N: int) -> Tuple:
@@ -41,7 +49,7 @@ def solve(N: int) -> Tuple:
     Hàm solve dùng cho mục đích `test`
     :rtype tuple:
     """
-    result = your_function(N)
+    result = calculateRuntime(N)
     return result
 
 

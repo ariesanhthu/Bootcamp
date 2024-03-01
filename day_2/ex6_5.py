@@ -13,10 +13,29 @@ def your_function(datapath):
     Nếu html_url nào bị thiếu, tạo html_url mới bằng
     "https://github.com/" + login tương ứng.
     """
-    result = None
+    # read data
+    file = open(datapath)
+    dataSaltContributors = json.load(file)
+    result = []
+
+    for contributor in dataSaltContributors:
+        # init a new dictionary to stored key - value required
+        contributorDict = {}
+
+        # apped value in data to new dictionary
+        contributorDict["login"] = contributor["login"]
+
+        if contributor.get("html_url") == None:
+            contributorDict["html_url"] = "https://github.com/" + contributor["login"]
+        else:
+            contributorDict["html_url"] = contributor["html_url"]
+
+        contributorDict["contributions"] = contributor["contributions"]
+
+        # apped new dictionary to list
+        result.append(contributorDict)
 
     return result
-    
 
 
 def solve(input_data):

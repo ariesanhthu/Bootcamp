@@ -10,7 +10,7 @@ def solve(numbers):
     Out[5]: [1, 1, 1]
     """
 
-    result = None
+    result = list(filter(lambda num: num % 2 == 1, numbers))
 
     return result
 

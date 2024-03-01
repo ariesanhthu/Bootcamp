@@ -10,7 +10,7 @@ def solve(numbers):
     In [8]: functools.reduce(lambda x,y: x+y, [1,2,3,4,5], 0)
     Out[8]: 15
     """
-    result = None
+    result = reduce(lambda x,y: x*y, numbers, 1)
 
     return result
 

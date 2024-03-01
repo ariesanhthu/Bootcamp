@@ -18,11 +18,10 @@ def repositories(github_login):
         repos = json.load(f)
         print(repos[0])
     # Sửa function cho phù hợp, trả về kết quả yêu cầu.
-    result = None
-
+    result = []
+    for repo in repos:
+        result.append(repo["name"])
     return result
-
-
 
 
 def solve(input_data):

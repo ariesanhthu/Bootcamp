@@ -17,10 +17,11 @@ def find_max_price(datafile):
     try:
         maxPrice =  max([float(item["price"]) for item in dr])
         timestampList = [item["time"] for item in dr if float(item["price"]) == maxPrice]
+        
         from datetime import datetime
-     
-        dt_obj = datetime.fromtimestamp(timestampList[0])
-        result = (dt_obj, maxPrice)
+        timestamp = int(timestampList[0])
+        dateTime = datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d")
+        result = (dateTime, maxPrice)
         pass
     finally:
         f.close()

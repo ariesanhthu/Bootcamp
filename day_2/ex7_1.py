@@ -11,10 +11,10 @@ def solve(a, *args):
     Python.
 
     """
-    result = None
-
-    return result
-
+    result = Fraction(a)
+    for fract in args:
+        result += Fraction(fract)
+    return float(result)
 
 
 def main():

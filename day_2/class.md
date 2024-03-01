@@ -121,7 +121,7 @@ Về bản chất, đây là 1 cơ chế "copy code tự động".
 ```python
 class Py(Student):
     def code(self):
-        print("{} can code Python!!!".format(self.name))
+    print("{} can code Python!!!".format(self.name))
 ```
 
 ```python

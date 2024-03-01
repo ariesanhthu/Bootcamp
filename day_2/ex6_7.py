@@ -14,8 +14,16 @@ def solve(input_data):
        2      10     0o2     0x2
        ...
     """
-    result = None
+    result = ""
 
+    for num in input_data:
+        result += (
+            str(num).rjust(8)
+            + str(bin(num)).rjust(8)
+            + str(oct(num)).rjust(8)
+            + str(hex(num)).rjust(8)
+            + "\n"
+        )
     return result
 
 

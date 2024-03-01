@@ -10,7 +10,7 @@ def solve(numbers):
     Out[2]: [2, 3, 4, 5, 6]
     """
 
-    result = None
+    result = list(map(lambda num: num*2, numbers))
 
     return result
 
