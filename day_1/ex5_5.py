@@ -27,6 +27,21 @@ def solve(inputfile, N=5):
     """
     result = None
 
+    result = None
+    with open(inputfile, "r") as file:
+        room = 0
+        student_id = 0
+        lst = []
+        for name in file:
+            name = name.lower()
+            if name[0] == "h" or name[-2:] == "ng":
+                room = N + 1
+            else:
+                room = N
+            lst.append((hash(name) % MAGIC_NUMBER, name, 1990, room))
+
+        return lst
+
 
     return result
 

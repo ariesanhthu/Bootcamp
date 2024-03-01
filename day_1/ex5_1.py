@@ -23,9 +23,9 @@ def solve(colors):
         In [1]: list(zip(['xanh', 'do'], ['XXX', 'YYY']))
         Out[1]: [('xanh', 'XXX'), ('do', 'YYY')]
     """
-    result = None
-
-
+    googleColorList = [colors["xanh da trời"], colors["đỏ"], colors["vàng"], colors["xanh da trời"], colors["xanh lá"], colors["đỏ"]]
+    characterList = [ch for ch in 'Google']
+    result = list(zip(characterList, googleColorList))
     return result
 
 

@@ -14,11 +14,22 @@ def solve(input_data):
     (Nếu có nhiều từ cùng xuất hiện với số lần như nhau thì trả về từ nào
     cũng được).
     """
-    result = None
+    result = []
+    countWordDic = {}
+    listOfWord = input_data.split()
 
+    charsRemove = '.,“”;'
+
+    for word in listOfWord:
+        word = word.translate({ord(i): None for i in charsRemove})
+        if word in countWordDic:
+            countWordDic[word] += 1
+        else:
+            countWordDic[word] = 1
+
+    result = (list(sorted(countWordDic.items(), key=lambda item: item[1], reverse=True)))
 
     return result[:10]
-
 
 def main():
     # Đây là một cách làm khác với kiểu dữ liệu có sẵn

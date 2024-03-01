@@ -12,7 +12,11 @@ def solve(term1, term2):
 
     result = None
 
-    return result
+    for subject, score in term1.items():
+        if not subject in term2:
+            term2[subject] = score
+            
+    return term2
 
 
 def main():

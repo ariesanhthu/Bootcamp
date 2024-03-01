@@ -54,9 +54,29 @@ def solve(last_year_data):
     Chú ý: code tránh dựa vào thứ tự cụ thể trong để bài.
     """
 
-    result = None
+    result = list(copy.deepcopy(last_year_data))
 
+    numberPeople = len(result)
 
+    #Get list of languagues
+    languagesList = [language for subList in result if subList["name"] == "Hoang" for language in subList["languages"]]
+    
+    # print(languagesList)
+
+    for idx in range(numberPeople):
+        if(result[idx]["name"]!="Hoang"):
+            #append list of languages
+            result[idx]["languages"] = languagesList
+
+            #append Tu's Girlfriend
+            if(result[idx]["name"] == "Tu"):
+                result[idx]["girl_friend"] = "Do Anh"
+            #delete Duy's Girlfriend
+            if(result[idx]["name"] == "Duy"):
+                result[idx].pop("girl_friend")
+        else:
+            result[idx]["languages"].append("Elixir")
+    
     return result
 
 

@@ -24,7 +24,7 @@ def solve():
                             for g in range(1,10):
                                 for h in range(1,10):
                                     for i in range(1,10):
-                                        if a + 13 * b / c + d + 12 * e - f - 11 + g * h / i - 10 == 66:
+                                        if int(a + 13 * b / c + d + 12 * e - f - 11 + g * h / i - 10) == 66:
                                             result += 1
     return result
 

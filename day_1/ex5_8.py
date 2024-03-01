@@ -10,7 +10,7 @@ def solve():
 
     Gợi ý: dùng ``chr()``, ``ord()``.
     """
-    result = None
+    result = [(num, chr(num)) for num in range(33, 54)]
 
     return result
 

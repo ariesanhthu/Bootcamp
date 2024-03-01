@@ -136,7 +136,12 @@ def solve(input_data):
     - Tạo 1 list chứa tên, dân số của các thành phố có dân số trên 1 triệu,
     sắp xếp theo thứ tự giảm dần.
     """
-    result = None
+    result = []
+    listStartWithH = sorted([(city["name"], city["population"]) for city in data if city["name"][0].lower() == "h"], key = lambda item: item[0])
+    listPopulation = sorted([(city["name"], city["population"]) for city in data if city["population"] > 1000000], key= lambda item: item[1], reverse=True)
+
+    result.append(listStartWithH)
+    result.append(listPopulation)
 
     return result
 

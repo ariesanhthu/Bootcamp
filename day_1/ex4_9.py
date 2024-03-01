@@ -7,9 +7,15 @@ def solve(numbers):
 
     Gợi ý: python có sẵn giá trị âm/dương vô cùng.
     """
-    assert isinstance(numbers, list)
-    result = None
+    import sys
 
+    assert isinstance(numbers, list)
+
+    result = -sys.maxsize
+
+    for num in numbers:
+        if result < num:
+            result = num
 
     return result
 
