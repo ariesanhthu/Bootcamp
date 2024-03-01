@@ -9,17 +9,23 @@ import time
 
 def find_max_price(datafile):
     f = open(datafile)
-    dr = csv.DictReader(f, ["time", "price", "UNKNOWN"])  # NOQA
+    dr = list(csv.DictReader(f, ["time", "price", "UNKNOWN"]))  # NOQA
     # Viết tiếp code vào đây
 
+    result = ()
+
     try:
-        # Xoá dòng sau và viết code vào đây set các giá trị phù hợp
-        # raise NotImplementedError("Bạn chưa làm bài này")
+        maxPrice =  max([float(item["price"]) for item in dr])
+        timestampList = [item["time"] for item in dr if float(item["price"]) == maxPrice]
+        from datetime import datetime
+     
+        dt_obj = datetime.fromtimestamp(timestampList[0])
+        result = (dt_obj, maxPrice)
         pass
     finally:
         f.close()
 
-    return
+    return result
 
 
 def solve():
