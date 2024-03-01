@@ -6,8 +6,7 @@ def solve(N):
     Must: use list comprehension
     Tips: list comprehension always create new list
     """
-    result = None
-
+    result = [i for i in range(2,N*2+1,2)]
 
     return result
 

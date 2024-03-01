@@ -29,8 +29,13 @@ def solve(N):
       *8******8*
       9********9
     """
-    result = None
-
+    result = ""
+    mid = int(N/2)
+    for i in range(mid):
+        result += "*" * i + str(i) + "*" * (N - i*2 - 2) + str(i) + "*"*i + "\n"
+    
+    for i in range(mid, N):
+        result += "*" * (N-i-1) + str(i) + "*" * ((i-mid)*2) + str(i) + "*"*(N-i-1) + "\n"
 
     return result
 

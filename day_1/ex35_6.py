@@ -9,12 +9,8 @@ def solve(N):
     Must: use list comprehension
     Tips: list comprehension always create new list
     """
-
-    result = None
-
-
-    return result
-
+    result = [int(ch) for ch in str(2**N)]
+    return sum(result)
 
 def main():
     print(solve(1000))

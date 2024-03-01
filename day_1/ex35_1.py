@@ -7,8 +7,7 @@ def solve(N):
     Tips: list comprehension always create new list
     """
 
-    result = None
-
+    result = [2 for i in range(N)]
 
     return result
 

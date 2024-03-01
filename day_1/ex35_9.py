@@ -13,7 +13,9 @@ def diff_attributes(object1, object2):
     Tìm list các "magic" attribute mà chỉ object1 có, object2 không có
     """
     result = None
-
+    import inspect
+    listOfNameAtribute2 = [atribute[0] for atribute in inspect.getmembers(object2) if atribute[0][:2] == '__' and atribute[0][-2:]=='__']
+    result = [atribute[0] for atribute in inspect.getmembers(object1) if atribute[0][:2] == '__' and atribute[0][-2:]=='__' and atribute[0] not in listOfNameAtribute2]
 
     return result
 

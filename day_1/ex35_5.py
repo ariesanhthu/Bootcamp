@@ -10,7 +10,7 @@ def solve(N):
     Tips: list comprehension always create new list
     """
 
-    result = None
+    result = [str(i)*6 for i in range(1,N,2)]
 
 
     return result
